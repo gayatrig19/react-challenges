@@ -11,12 +11,23 @@ class NavBarSimple extends Component {
         }
     }
 
-    handleClick = () => {
-        this.setState((prevState) => ({
-            message: prevState.message === "Hello, guest!" ? "Welcome back, user!" : "Hello, guest!",
-            buttonText: prevState.buttonText === "Logout" ? "Login" : "Logout",
-        }), ()=>  console.log(this.state.message))  
+    // handleClick = () => {
+    //     this.setState((prevState) => ({
+    //         message: prevState.message === "Hello, guest!" ? "Welcome back, user!" : "Hello, guest!",
+    //         buttonText: prevState.buttonText === "Logout" ? "Login" : "Logout",
+    //     }), ()=>  console.log(this.state.message))  
        
+    // }
+
+    handleClick() {
+        this.setState((prevState) => {
+            return {
+                message: prevState.message === "Hello, guest!" ? "Welcome back, user!" : "Hello, guest!",
+                buttonText: prevState.buttonText === "Logout" ? "Login" : "Logout",
+            };     
+        }, () => {
+            console.log(this.state.message);
+        });
     }
 
     render() {
